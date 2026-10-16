@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Messaround</title>
+</head>
+<script>
+    //makes a function. variable set is (color)
+    function changeBGcolor(color) {
+        document.body.style.background = color; 
+    }
+    function activeChange() {
+        changeBGcolor('yellow');
+    }
+</script>
+<body>
+    <h1>Let's learn Javascript</h1>
+    <h2>Let's learn about onclick and alerts</h2>
+
+    <a href="https://www.youtube.com" onclick="alert('Warning! You are about to leave the page!')" target="_blank">Youtube</a>
+    <!--Onclick runs the code in the quotes when the link is clicked. 
+    Target blank makes the link open in a new page instead of replacing the website.-->
+    <h2>How do we display and hide text?</h2>
+    <h2>What's my secret identity?</h2>
+    <p id="secret"></p> <!--Given the way it's being used, the id doesn't need to be made with css-->
+    <button onclick="
+    document.getElementById('secret').innerHTML='I have a big brain, I am Megamind';
+    document.getElementById('secret').style.display='block'
+    //the style.display='block' changes the style to be block (display the text)
+    //This allows it to reveal the text again once the display is changed to none.
+    ">Reveal!</button>
+    <!--document refers to the whole webpage
+    getElementById looks for an element with a specific ID
+    'secret' is the id being looked for
+    The content in innerHTML replaces the content in the specified id ('secret' in this case)
+    -->
+    <button onclick="document.getElementById('secret').style.display='None';">Hide</button>
+    <!--
+    style.display='None' makes it so the display of the id is none (no content)
+    -->
+    <h2>How do I change an image in javascript?</h2>
+    <img src="images/LightOn.jpg" height="200px" width="200px" id="myImage">
+    <button onclick="document.getElementById('myImage').src='images/LightOff.jpg';">Bulb Off!</button>
+    <button onclick="document.getElementById('myImage').src='images/LightOn.jpg';">Bulb On!</button>
+    <!--Note that onclick can be applied to almost anything, including images.
+    Not just for buttons.
+    -->
+    <h2>How do we change styles with a button?</h2>
+    <p id="vihaan">Hi, I am Vihaan</p>
+    <button onclick="
+    document.getElementById('vihaan').style.color='blue';
+    document.getElementById('vihaan').style.fontSize='5px';
+    ">Cake - Eat Me!</button>
+    <button onclick="
+    document.getElementById('vihaan').style.fontSize='25px';
+    ">Potion - Drink Me!</button>
+    <button onclick="activeChange()">Change background color to yellow</button>
+    <!--Remember to put the parentheses when calling a function-->
+    <button onclick="document.getElementById('myImage').style.rotate='30deg';">Rotate image</button>
+</body>
+</html>
